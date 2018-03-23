@@ -1,0 +1,4 @@
+﻿  Test.cpp
+\\cs1\home\thildahl20\cs-475w-1\os_simulator\os_simulator\test.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  OS_Simulator.vcxproj -> \\cs1\home\thildahl20\CS-475W-1\OS_Simulator\Debug\OS_Simulator.exe
+  OS_Simulator.vcxproj -> \\cs1\home\thildahl20\CS-475W-1\OS_Simulator\Debug\OS_Simulator.pdb (Partial PDB)
