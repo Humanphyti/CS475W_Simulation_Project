@@ -20,7 +20,7 @@ PCB::PCB()
 	estimated_burst = 0;
 
 	turnaround = 0;
-	response = 0;
+	response = -1;
 }
 
 //This randomizes the variables to create a new randomized process
@@ -61,7 +61,7 @@ void PCB::Randomize(vector<int> &ids) {
 		estimated_burst = rand() % 100;
 
 	turnaround = 0;
-	response = 0;
+	response = -1;
 }
 
 ///Methods
