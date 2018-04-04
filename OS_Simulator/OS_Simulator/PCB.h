@@ -51,6 +51,7 @@ public:
 	int get_arrival() { return arrival_time; }
 	int get_turnaround() { return turnaround; }
 	int get_response() { return response; }
+	int get_estimated_burst() { return estimated_burst; }
 
 	//When process first created, set arrival time
 	//Will be part of randomize
@@ -78,7 +79,6 @@ public:
 	//When process is completed, update turnaround time
 	//Should only be called once when a process execution is completed
 	void set_turnaround();
-
 };
 
 #endif

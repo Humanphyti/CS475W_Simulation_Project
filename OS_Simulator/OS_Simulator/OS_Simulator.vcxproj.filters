@@ -32,5 +32,8 @@
     <ClCompile Include="FCFS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SPN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
