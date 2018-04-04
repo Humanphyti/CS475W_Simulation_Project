@@ -142,6 +142,7 @@
     <ClInclude Include="PCB.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FCFS.cpp" />
     <ClCompile Include="PCB.cpp" />
     <ClCompile Include="RoundRobin.cpp" />
     <ClCompile Include="Test.cpp" />
