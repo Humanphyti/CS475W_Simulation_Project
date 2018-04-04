@@ -18,6 +18,7 @@ PCB::PCB()
 
 	arrival_time = 0;
 	estimated_burst = 0;
+	estimated_io = 0;
 
 	turnaround = 0;
 	response = -1;
@@ -60,6 +61,9 @@ void PCB::Randomize(vector<int> &ids) {
 	else
 		estimated_burst = rand() % 100;
 
+	//Io time must be less than the total execution time, but it is randomized
+	estimated_io = rand() % estimated_burst;
+
 	turnaround = 0;
 	response = -1;
 }
@@ -90,9 +94,9 @@ void PCB::update_cpu(int time)
 
 //increases IO time by given amount of time (time spent processing)
 //param time is the amount of time alloted by the I/O device
-void PCB::update_io(int time)
+void PCB::update_io()
 {
-	io_burst += time;
+	io_burst = estimated_io;
 }
 
 //When process is completed, update turnaround time
