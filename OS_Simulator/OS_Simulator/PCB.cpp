@@ -104,3 +104,20 @@ void PCB::update_io()
 void PCB::set_turnaround() {
 	turnaround = estimated_burst + wait;
 }
+
+//For multilevel feedback queue only, adjust round_count
+void PCB::update_round()
+{
+	//The first time through a RR queue will be 0, then count up
+	//Desired number of times through queue before changing queues will be integer compared below
+	if (round_count <= 2)
+		round_count++;
+	//Once it hits designated times through through, must change queues so reset to 0 when updated
+	else
+		round_count = 0;
+}
+
+int PCB::get_round()
+{
+	return round_count;
+}

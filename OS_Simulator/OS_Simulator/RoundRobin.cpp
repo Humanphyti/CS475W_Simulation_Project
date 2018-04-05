@@ -2,7 +2,7 @@
 // Authors: Tristan Hildahl 
 // Operating System Simulator
 // Implements a Round Robin simulator for a processor
-// Last Modified: 3/27/2018
+// Last Modified: 4/4/2018
 ////////////////////////////////////
 
 #include <vector>
@@ -60,7 +60,7 @@ void RoundRobin(vector<PCB> &pcbs, int time_splice, int context_switch) {
 		if (ready.empty()) {
 			//This will be the next time the cpu is running a process, and thus the time to start keeping track of the cpu again
 			int shortest_time = NULL;
-			//current_time++;
+
 			for (int j = 0; j < pcbs.size(); j++) {
 				//Check to see if a new process arrives first
 				if (pcbs[j].get_response() == -1 && pcbs[j].get_arrival() < shortest_time)

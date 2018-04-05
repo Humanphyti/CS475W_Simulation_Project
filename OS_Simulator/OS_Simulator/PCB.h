@@ -15,13 +15,14 @@ class PCB {
 private:
 	int PID;
 	bool running;			//1 means process is running (0 it is waiting)
-	//PC: Should not need
-	
+
 	///These are the cumulative times the process is spent running and waiting
 	int cpu_burst;			//This is the total amount of time spent running thus far by the cpu
 	int io_burst;			//Total time running by I/O
 	int wait;				//Amount of time spent waiting in queues (total time thus far spent not running)
-	//int last_time;			//This stores the moment the process was last being run, so (current time - this) will be time spent waiting between executions
+
+	//This is used only on the multilevel feedback queue to keep track of how often a process has been run in the same queue before changing
+	int round_count;
 
 	//Should be unique to process
 	int arrival_time;		//This is the time when it gets brought into queue for processing
@@ -82,6 +83,10 @@ public:
 	//When process is completed, update turnaround time
 	//Should only be called once when a process execution is completed
 	void set_turnaround();
+
+	//For multilevel feedback queue only, adjust round_count
+	void update_round();
+	int get_round();
 };
 
 #endif

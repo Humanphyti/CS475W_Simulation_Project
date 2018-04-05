@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FCFS.cpp" />
+    <ClCompile Include="MultiLevel_FQ.cpp" />
     <ClCompile Include="PCB.cpp" />
     <ClCompile Include="RoundRobin.cpp" />
     <ClCompile Include="SPN.cpp" />
