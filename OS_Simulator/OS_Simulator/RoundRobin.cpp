@@ -19,11 +19,14 @@ using std::queue;
 //							The vector must be in order from earliest to latest arrival time
 //@param time_splice is the amount of time spent processing before a context switch for the round robin 
 //@param context_switch is the amount of time spent during a context switch
-void RoundRobin(vector<PCB> &pcbs, int time_splice, int context_switch) {
+void RoundRobin(vector<PCB> &pcbs, int context_switch, int time_splice) {
 	//This is the queue of processes which are ready for execution (have arrived at the processor)
 	queue<PCB> ready;
 	//This is a vector that stores all of the processes that have been responded to, but are waiting for io to complete
 	vector<PCB> io_vector;
+
+	//This will reference the PCB currently executing by the processor
+	PCB *current_PCB;
 
 	//This is the last time the processor checked for incoming processes  
 	int last_updated = -1;
@@ -75,7 +78,7 @@ void RoundRobin(vector<PCB> &pcbs, int time_splice, int context_switch) {
 		//else the ready queue is not empty, so get the next process
 		else {		
 			//Uses pointer to the next object in order to affect the actual PCB object in memory
-			PCB *current_PCB = &ready.front();
+			current_PCB = &ready.front();
 			ready.pop();
 			current_PCB->set_running();
 
@@ -84,7 +87,7 @@ void RoundRobin(vector<PCB> &pcbs, int time_splice, int context_switch) {
 				current_PCB->set_response(current_time);
 
 
-			if (current_PCB->get_estimated_io() < current_PCB->get_io()) {
+			if (current_PCB->get_estimated_io() != current_PCB->get_io()) {
 				current_PCB->update_io();
 				std::cout << "Ran process " << current_PCB->get_PID() << " with an IO device." << std::endl;
 				//When IO is finished, place it in the io queue
@@ -125,6 +128,9 @@ void RoundRobin(vector<PCB> &pcbs, int time_splice, int context_switch) {
 
 			current_time += context_switch;
 			total_context += context_switch;
+			
 		}
 	} while (completed_processes < pcbs.size());	//Loops until all processes have been completed
+
+	delete current_PCB;
 }

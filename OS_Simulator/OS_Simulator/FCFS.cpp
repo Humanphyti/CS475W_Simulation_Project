@@ -16,6 +16,10 @@ using std::queue;
 void FCFS(vector<PCB> &pcbs) {
 	queue<PCB> ready;
 	vector<PCB> io_vector;
+
+	//This will reference the PCB currently executing by the processor
+	PCB *current_PCB;
+
 	int last_updated = -1;
 
 	int current_time = 0;
@@ -59,7 +63,7 @@ void FCFS(vector<PCB> &pcbs) {
 			//else the ready queue is not empty, so get the next process
 			else {
 				//Uses pointer to the next object in order to affect the actual PCB object in memory
-				PCB *current_PCB = &ready.front();
+				current_PCB = &ready.front();
 				ready.pop();
 				current_PCB->set_running();
 
@@ -67,7 +71,7 @@ void FCFS(vector<PCB> &pcbs) {
 				if (current_PCB->get_response() == -1)
 					current_PCB->set_response(current_time);
 
-				if (current_PCB->get_estimated_io() < current_PCB->get_io()) {
+				if (current_PCB->get_estimated_io() != current_PCB->get_io()) {
 					current_PCB->update_io();
 					std::cout << "Ran process " << current_PCB->get_PID() << " with an IO device." << std::endl;
 					//When IO is finished, place it in the io queue
@@ -94,4 +98,6 @@ void FCFS(vector<PCB> &pcbs) {
 
 		}
 	} while (completed_processes < pcbs.size());
+
+	delete current_PCB;
 }

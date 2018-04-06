@@ -10,11 +10,16 @@ using std::vector;
 using std::queue;
 using std::sort;
 
-void SPN(vector<PCB> &pcbs, int estimated_burst) {
+void SPN(vector<PCB> &pcbs) {
 
 	queue<PCB> ready;
 
 	vector<PCB> io_vector;
+
+	//This will reference the PCB currently executing by the processor
+	PCB *current_PCB;
+
+	PCB *previous_PCB;
 
 	int lastUpdated = -1;
 
@@ -58,8 +63,8 @@ void SPN(vector<PCB> &pcbs, int estimated_burst) {
 		//else the ready queue is not empty, so get the next process
 		else {
 		//sort the ready queue first then use the below code
-		PCB *current_PCB = &ready.front();
-		PCB *previous_PCB = current_PCB;
+		current_PCB = &ready.front();
+		previous_PCB = current_PCB;
 		sort(ready.front(), ready.back(), (current_PCB->get_estimated_burst < previous_PCB->get_estimated_burst));
 		ready.pop();
 		current_PCB->set_running();
@@ -68,7 +73,7 @@ void SPN(vector<PCB> &pcbs, int estimated_burst) {
 		if (current_PCB->get_response() == -1)
 			current_PCB->set_response(currentTime);
 
-		if (current_PCB->get_estimated_io() < current_PCB->get_io()) {
+		if (current_PCB->get_estimated_io() != current_PCB->get_io()) {
 			current_PCB->update_io();
 			std::cout << "Ran process " << current_PCB->get_PID() << " with an IO device." << std::endl;
 			//When IO is finished, place it in the io queue
@@ -96,4 +101,7 @@ void SPN(vector<PCB> &pcbs, int estimated_burst) {
 		}
 
 	} while (completedProcesses < pcbs.size());
+
+	delete current_PCB;
+	delete previous_PCB;
 }

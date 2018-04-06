@@ -142,6 +142,7 @@
     <ClInclude Include="PCB.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="calculate.cpp" />
     <ClCompile Include="FCFS.cpp" />
     <ClCompile Include="Multicore.cpp" />
     <ClCompile Include="MultiLevel_FQ.cpp" />

@@ -57,9 +57,9 @@ void PCB::Randomize(vector<int> &ids) {
 	//Set execution time
 	int range = rand() % 100;	//Assigns a random total execution time, with a 75% chance of being a shorter process
 	if (range < 75)
-		estimated_burst = rand() % 10;
+		estimated_burst = rand() % 50;
 	else
-		estimated_burst = rand() % 100;
+		estimated_burst = (rand() % 150) + 50;
 
 	//Io time must be less than the total execution time, but it is randomized
 	estimated_io = rand() % estimated_burst;

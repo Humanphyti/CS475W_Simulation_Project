@@ -17,6 +17,10 @@ void Multicore(vector<PCB> &pcbs) {
 	queue<PCB> ready, FCFS1, FCFS2, FCFS3, FCFS4;
 
 	vector<PCB> io_vector;
+
+	//Uses pointer to the next object in order to affect the actual PCB object in memory
+	PCB *current_PCB;
+
 	int last_updated = -1;
 
 	int current_time = 0;
@@ -59,9 +63,6 @@ void Multicore(vector<PCB> &pcbs) {
 			}
 			//else the ready queue is not empty, so get the next process
 			else {
-				//Uses pointer to the next object in order to affect the actual PCB object in memory
-				PCB *current_PCB;
-
 				if (FCFS1.empty()) {
 					*current_PCB = FCFS1.front();
 					ready.pop();
@@ -85,7 +86,7 @@ void Multicore(vector<PCB> &pcbs) {
 				if (current_PCB->get_response() == -1)
 					current_PCB->set_response(current_time);
 
-				if (current_PCB->get_estimated_io() < current_PCB->get_io()) {
+				if (current_PCB->get_estimated_io() != current_PCB->get_io()) {
 					current_PCB->update_io();
 					std::cout << "Ran process " << current_PCB->get_PID() << " with an IO device." << std::endl;
 					//When IO is finished, place it in the io queue
@@ -112,4 +113,6 @@ void Multicore(vector<PCB> &pcbs) {
 
 		}
 	} while (completed_processes < pcbs.size());
+
+	delete current_PCB;
 }

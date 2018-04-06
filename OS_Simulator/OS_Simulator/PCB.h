@@ -65,7 +65,7 @@ public:
 	//Switches the state of the process from running and waiting(ready)
 	void set_running() { running = !running; }
 	//When first reacted to, set response time
-	void set_response(int time) { response = time; }
+	void set_response(int time) { response = time - arrival_time; }
 
 	//Returns the remaining burst time, so processes will not be sent excess time to complete
 	int get_remaining_time();
