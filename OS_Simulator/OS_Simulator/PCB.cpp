@@ -64,6 +64,8 @@ void PCB::Randomize(vector<int> &ids) {
 	//Io time must be less than the total execution time, but it is randomized
 	estimated_io = rand() % estimated_burst;
 
+	estimated_cpu = estimated_burst - estimated_io;
+
 	turnaround = 0;
 	response = -1;
 }

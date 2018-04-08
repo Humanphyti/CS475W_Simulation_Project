@@ -28,6 +28,8 @@ private:
 	int arrival_time;		//This is the time when it gets brought into queue for processing
 	int estimated_burst;	//Amount of burst time required to complete the process: process is completed when cpu_burst = this
 	int estimated_io;		//Amount of required io burst time 
+	int estimated_cpu;		//Amount of required cpu burst time
+
 
 	int turnaround;			//Time from submission to completion
 	int response;			//Time when the process is first responded to
@@ -56,6 +58,8 @@ public:
 	int get_response() { return response; }
 	int get_estimated_burst() { return estimated_burst; }
 	int get_estimated_io() { return estimated_io; }
+	int get_estimated_cpu() { return estimated_cpu; }
+
 
 	//When process first created, set arrival time
 	//Will be part of randomize
