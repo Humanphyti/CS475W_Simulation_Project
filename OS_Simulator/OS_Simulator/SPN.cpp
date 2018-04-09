@@ -63,9 +63,9 @@ void SPN(vector<PCB> &pcbs) {
 		//else the ready queue is not empty, so get the next process
 		else {
 		//sort the ready queue first then use the below code
-		current_PCB = &ready.front();
-		sort(ready.front(), ready.back(), ((current_PCB->get_estimated_burst()) < (previous_PCB->get_estimated_burst())));
-		previous_PCB = current_PCB;
+	///	current_PCB = &ready.front();
+	///	sort(ready.front(), ready.back(), ((current_PCB->get_estimated_burst()) < (previous_PCB->get_estimated_burst())));
+	///	previous_PCB = current_PCB;
 		ready.pop();
 		current_PCB->set_running();
 

@@ -23,28 +23,28 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PCB.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RoundRobin.cpp">
+    <ClCompile Include="calculate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FCFS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SPN.cpp">
+    <ClCompile Include="Multicore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MultiLevel_FQ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Multicore.cpp">
+    <ClCompile Include="PCB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="calculate.cpp">
+    <ClCompile Include="RoundRobin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPN.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

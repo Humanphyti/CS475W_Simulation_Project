@@ -47,7 +47,7 @@ void FCFS(vector<PCB> &pcbs) {
 			//Find the next time something enters, or shortest time between remaining arrival times and io completion times
 			if (ready.empty()) {
 				//This will be the next time the cpu is running a process, and thus the time to start keeping track of the cpu again
-				int shortest_time = NULL;
+				int shortest_time;// = NULL;
 
 				for (int j = 0; j < pcbs.size(); j++) {
 					//Check to see if a new process arrives first
