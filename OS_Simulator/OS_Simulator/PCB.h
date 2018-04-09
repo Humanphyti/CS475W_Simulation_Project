@@ -34,7 +34,10 @@ private:
 	int turnaround;			//Time from submission to completion
 	int response;			//Time when the process is first responded to
 
+	
+
 public:
+	
 	///Constructors
 	//Initially sets all values to 0, then they will be randomized to create unique processes with Randomize()
 	PCB();
@@ -87,6 +90,8 @@ public:
 	//When process is completed, update turnaround time
 	//Should only be called once when a process execution is completed
 	void set_turnaround();
+
+	void set_arrival_time() { arrival_time = rand() % 500; }
 
 	//For multilevel feedback queue only, adjust round_count
 	void update_round();

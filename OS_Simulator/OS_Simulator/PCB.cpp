@@ -52,7 +52,9 @@ void PCB::Randomize(vector<int> &ids) {
 	io_burst = 0;
 	wait = 0;
 
-	arrival_time = 0;
+	//set arrival time
+	set_arrival_time();
+	arrival_time = get_arrival();
 
 	//Set execution time
 	int range = rand() % 100;	//Assigns a random total execution time, with a 75% chance of being a shorter process

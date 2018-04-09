@@ -30,7 +30,7 @@ void FCFS(vector<PCB> &pcbs) {
 		//This adds all of the processes that have arrived since last execution started into the ready queue
 		for (int i = 0; i < pcbs.size(); i++) {
 			//If the arrival time for a process is between the time last checked and current time, add it to the ready RR queue
-			if (pcbs[i].get_arrival() <= current_time && pcbs[i].get_arrival > last_updated)
+			if ((pcbs[i].get_arrival() <= current_time) && (pcbs[i].get_arrival() > last_updated))
 				ready.push(pcbs[i]);
 		}
 		//This adds all of the processes that have finished their io execution into the ready RR queue
@@ -38,7 +38,7 @@ void FCFS(vector<PCB> &pcbs) {
 			//If the current time exceeds the time necessary to finish the io portion of the program, remove from vector and place in ready queue
 			if (io_vector[i].get_response() + io_vector[i].get_io() <= current_time) {
 				ready.push(io_vector[i]);
-				io_vector.erase[i];
+				io_vector.erase(io_vector.begin() + i);
 			}
 
 			last_updated = current_time;

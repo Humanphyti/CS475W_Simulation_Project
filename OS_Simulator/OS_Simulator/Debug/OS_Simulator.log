@@ -1,4 +1,107 @@
 ﻿  Test.cpp
-\\cs1\home\thildahl20\cs-475w-1\os_simulator\os_simulator\test.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  OS_Simulator.vcxproj -> \\cs1\home\thildahl20\CS-475W-1\OS_Simulator\Debug\OS_Simulator.exe
-  OS_Simulator.vcxproj -> \\cs1\home\thildahl20\CS-475W-1\OS_Simulator\Debug\OS_Simulator.pdb (Partial PDB)
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(31): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(37): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(52): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(100): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\roundrobin.cpp(44): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\roundrobin.cpp(51): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\roundrobin.cpp(67): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\roundrobin.cpp(133): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(32): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(39): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(51): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(103): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multicore.cpp(34): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multicore.cpp(45): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multicore.cpp(61): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multicore.cpp(78): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multicore.cpp(90): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multicore.cpp(99): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multicore.cpp(135): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multilevel_fq.cpp(50): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multilevel_fq.cpp(57): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multilevel_fq.cpp(73): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\multilevel_fq.cpp(191): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\calculate.cpp(18): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\calculate.cpp(23): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\calculate.cpp(29): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\calculate.cpp(34): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\calculate.cpp(40): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\calculate.cpp(45): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(30): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(988): error C2794: 'iterator_category': is not a member of any direct or indirect base class of 'std::iterator_traits<_InIt>'
+          with
+          [
+              _InIt=PCB
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2915): note: see reference to function template instantiation 'void std::_Debug_range<_RanIt>(_InIt,_InIt,std::_Dbfile_t,std::_Dbline_t)' being compiled
+          with
+          [
+              _RanIt=PCB,
+              _InIt=PCB
+          ]
+  d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(67): note: see reference to function template instantiation 'void std::sort<_Ty,bool>(_RanIt,_RanIt,_Pr)' being compiled
+          with
+          [
+              _Ty=PCB,
+              _RanIt=PCB,
+              _Pr=bool
+          ]
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(988): error C2938: '_Iter_cat_t<PCB>' : Failed to specialize alias template
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(988): error C2062: type 'unknown-type' unexpected
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2784: 'unknown-type std::operator -(const std::move_iterator<_RanIt> &,const std::move_iterator<_RanIt2> &)': could not deduce template argument for 'const std::move_iterator<_RanIt> &' from 'PCB'
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(2197): note: see declaration of 'std::operator -'
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2916): note: see reference to function template instantiation 'void std::_Sort_unchecked<_Iter,_Pr>(_RanIt,_RanIt,_Pr &)' being compiled
+          with
+          [
+              _Iter=PCB,
+              _Pr=bool,
+              _RanIt=PCB
+          ]
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2784: 'unknown-type std::operator -(const std::reverse_iterator<_RanIt> &,const std::reverse_iterator<_RanIt2> &)': could not deduce template argument for 'const std::reverse_iterator<_RanIt> &' from 'PCB'
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(1288): note: see declaration of 'std::operator -'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2676: binary '-': 'PCB' does not define this operator or a conversion to a type acceptable to the predefined operator
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2672: '_Sort_unchecked1': no matching overloaded function found
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2780: 'void std::_Sort_unchecked1(_RanIt,_RanIt,_Diff,_Pr &)': expects 4 arguments - 3 provided
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2874): note: see declaration of 'std::_Sort_unchecked1'
+  SPN.cpp
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(32): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(39): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(51): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(103): warning C4018: '<': signed/unsigned mismatch
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(988): error C2794: 'iterator_category': is not a member of any direct or indirect base class of 'std::iterator_traits<_InIt>'
+          with
+          [
+              _InIt=PCB
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2915): note: see reference to function template instantiation 'void std::_Debug_range<_RanIt>(_InIt,_InIt,std::_Dbfile_t,std::_Dbline_t)' being compiled
+          with
+          [
+              _RanIt=PCB,
+              _InIt=PCB
+          ]
+  d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\spn.cpp(67): note: see reference to function template instantiation 'void std::sort<_Ty,bool>(_RanIt,_RanIt,_Pr)' being compiled
+          with
+          [
+              _Ty=PCB,
+              _RanIt=PCB,
+              _Pr=bool
+          ]
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(988): error C2938: '_Iter_cat_t<PCB>' : Failed to specialize alias template
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(988): error C2062: type 'unknown-type' unexpected
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2784: 'unknown-type std::operator -(const std::move_iterator<_RanIt> &,const std::move_iterator<_RanIt2> &)': could not deduce template argument for 'const std::move_iterator<_RanIt> &' from 'PCB'
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(2197): note: see declaration of 'std::operator -'
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2916): note: see reference to function template instantiation 'void std::_Sort_unchecked<_Iter,_Pr>(_RanIt,_RanIt,_Pr &)' being compiled
+          with
+          [
+              _Iter=PCB,
+              _Pr=bool,
+              _RanIt=PCB
+          ]
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2784: 'unknown-type std::operator -(const std::reverse_iterator<_RanIt> &,const std::reverse_iterator<_RanIt2> &)': could not deduce template argument for 'const std::reverse_iterator<_RanIt> &' from 'PCB'
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\xutility(1288): note: see declaration of 'std::operator -'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2676: binary '-': 'PCB' does not define this operator or a conversion to a type acceptable to the predefined operator
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2672: '_Sort_unchecked1': no matching overloaded function found
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2908): error C2780: 'void std::_Sort_unchecked1(_RanIt,_RanIt,_Diff,_Pr &)': expects 4 arguments - 3 provided
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.10.25017\include\algorithm(2874): note: see declaration of 'std::_Sort_unchecked1'
+  Generating Code...

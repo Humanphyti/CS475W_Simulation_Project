@@ -37,7 +37,7 @@ void Multicore(vector<PCB> &pcbs) {
 			if (io_vector[i].get_response() + io_vector[i].get_io() <= current_time)
 			{
 				ready.push(io_vector[i]);
-				io_vector.erase[i];
+				io_vector.erase(io_vector.begin() + i);
 
 			}
 		}
@@ -45,7 +45,7 @@ void Multicore(vector<PCB> &pcbs) {
 		for (int i = 0; i < pcbs.size(); i++)
 		{
 			//If the arrival time for a process is between the time last checked and current time, add it to the ready RR queue
-			if (pcbs[i].get_arrival() <= current_time && pcbs[i].get_arrival > last_updated)
+			if (pcbs[i].get_arrival() <= current_time && pcbs[i].get_arrival() > last_updated)
 				ready.push(pcbs[i]);
 		}
 
@@ -75,9 +75,9 @@ void Multicore(vector<PCB> &pcbs) {
 		{
 			//Load ready processes to the cores
 			//Ensure no more than 8 cores are running at a time
-			for (int k = 0; k < ready.size; k++) {
+			for (int k = 0; k < ready.size(); k++) {
 				multicores[k] = ready.front();
-				ready.pop;
+				ready.pop();
 				++runningCores;
 				if (runningCores == 8)
 					break;
@@ -85,18 +85,18 @@ void Multicore(vector<PCB> &pcbs) {
 			//If there is at least one process in the multicore
 			if (!multicores.empty()) {
 				//initialize execution time to the cpu burst of the first element in the multicore vector
-				int execution = multicores[0].get_estimated_cpu;
+				int execution = multicores[0].get_estimated_cpu();
 				//Check all of the processes in the multicore if they have a cpu burst time less than the first element's
-				for (int j = 0; j < multicores.size; j++) {
+				for (int j = 0; j < multicores.size(); j++) {
 					//If it finds a cpu burst less than another than that will be the execution time
-					if (multicores[j].get_estimated_cpu < execution) {
+					if (multicores[j].get_estimated_cpu() < execution) {
 						//execution time becomes shortest remaining burst time
-						execution = multicores[j].get_estimated_cpu;
+						execution = multicores[j].get_estimated_cpu();
 					}
 				}
 				current_time = execution;
 				//Manipulate the actual process data of all processes in multicores
-				for (int i = 0; i < multicores.size; i++) {
+				for (int i = 0; i < multicores.size(); i++) {
 					current_PCB = &multicores[i];
 					current_PCB->set_running();
 
@@ -105,7 +105,7 @@ void Multicore(vector<PCB> &pcbs) {
 						current_PCB->set_response(current_time);
 
 					//If the process has started its cpu but not finished
-					if (multicores[i].get_remaining_time - multicores[i].get_estimated_io > multicores[i].get_estimated_cpu) {
+					if (multicores[i].get_remaining_time() - multicores[i].get_estimated_io() > multicores[i].get_estimated_cpu()) {
 						current_PCB->update_cpu(execution);
 					}
 
@@ -117,7 +117,7 @@ void Multicore(vector<PCB> &pcbs) {
 						io_vector.push_back(*current_PCB);
 					}
 					//If the process has met both its cpu and io bursts
-					if (current_PCB->get_estimated_burst == current_PCB->get_estimated_cpu + current_PCB->get_io) {
+					if (current_PCB->get_estimated_burst() == current_PCB->get_estimated_cpu() + current_PCB->get_io()) {
 						std::cout << "Ran process " << current_PCB->get_PID() << " for " << execution << std::endl;
 
 						//Finalize values for the current process and do not put it back in queue: process is completed
@@ -126,7 +126,7 @@ void Multicore(vector<PCB> &pcbs) {
 						std::cout << "Process " << current_PCB->get_PID() << " completed." << std::endl;
 						current_PCB->set_running();
 						completed_processes++;
-						multicores.erase[i];
+						multicores.erase(multicores.begin() + i);
 						--runningCores;
 					}
 				}

@@ -49,7 +49,7 @@ void MultiLevel_FQ(vector<PCB> pcbs, int context_switch, int time1, int time2, i
 		//This adds all of the processes that have arrived since last execution started into the ready RR queue
 		for (int i = 0; i < pcbs.size(); i++) {
 			//If the arrival time for a process is between the time last checked and current time, add it to the ready RR queue
-			if (pcbs[i].get_arrival() <= current_time && pcbs[i].get_arrival > last_updated)
+			if (pcbs[i].get_arrival() <= current_time && pcbs[i].get_arrival() > last_updated)
 				ready1.push(pcbs[i]);
 		}
 
@@ -58,7 +58,7 @@ void MultiLevel_FQ(vector<PCB> pcbs, int context_switch, int time1, int time2, i
 			//If the current time exceeds the time necessary to finish the io portion of the program, remove from vector and place in ready queue
 			if (io_vector[i].get_response() + io_vector[i].get_io() <= current_time) {
 				ready1.push(io_vector[i]);
-				io_vector.erase[i];
+				io_vector.erase(io_vector.begin() + i);
 			}
 		}
 

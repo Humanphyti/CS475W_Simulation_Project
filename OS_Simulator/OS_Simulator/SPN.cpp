@@ -31,7 +31,7 @@ void SPN(vector<PCB> &pcbs) {
 
 		for (int i = 0; i < pcbs.size(); i++) {
 			//if the arrival time of the currently examined process 
-			if (pcbs[i].get_arrival() <= currentTime && pcbs[i].get_arrival > lastUpdated)
+			if (pcbs[i].get_arrival() <= currentTime && pcbs[i].get_arrival() > lastUpdated)
 				ready.push(pcbs[i]);
 		}
 
@@ -40,7 +40,7 @@ void SPN(vector<PCB> &pcbs) {
 			//If the current time exceeds the time necessary to finish the io portion of the program, remove from vector and place in ready queue
 			if (io_vector[i].get_response() + io_vector[i].get_io() <= currentTime) {
 				ready.push(io_vector[i]);
-				io_vector.erase[i];
+				io_vector.erase(io_vector.begin() + i);
 			}
 		lastUpdated = currentTime;
 
@@ -64,8 +64,8 @@ void SPN(vector<PCB> &pcbs) {
 		else {
 		//sort the ready queue first then use the below code
 		current_PCB = &ready.front();
+		sort(ready.front(), ready.back(), ((current_PCB->get_estimated_burst()) < (previous_PCB->get_estimated_burst())));
 		previous_PCB = current_PCB;
-		sort(ready.front(), ready.back(), (current_PCB->get_estimated_burst < previous_PCB->get_estimated_burst));
 		ready.pop();
 		current_PCB->set_running();
 
