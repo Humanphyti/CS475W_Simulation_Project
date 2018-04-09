@@ -18,6 +18,9 @@
     <ClInclude Include="PCB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ProcessTxt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PCB.cpp">

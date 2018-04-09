@@ -1,4 +1,5 @@
 ﻿  Test.cpp
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\processtxt.h(20): warning C4018: '<': signed/unsigned mismatch
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(31): warning C4018: '<': signed/unsigned mismatch
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(37): warning C4018: '<': signed/unsigned mismatch
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(52): warning C4018: '<': signed/unsigned mismatch

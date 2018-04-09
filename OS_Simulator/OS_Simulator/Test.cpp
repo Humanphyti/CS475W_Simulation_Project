@@ -6,7 +6,7 @@
 ////////////////////////////////////
 
 #include "PCB.h"
-
+#include "ProcessTxt.h"
 
 
 #include "FCFS.cpp"
@@ -41,8 +41,8 @@ int main() {
 	}
 
 	//Create file of processes
-	//WriteFile();
-	//unnecessary given how our PCB is set up
+	WriteFile();
+	
 
 	//Read in file of processes
 	//unnecessary given how our PCB is set up
