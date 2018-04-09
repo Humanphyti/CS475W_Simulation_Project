@@ -42,6 +42,8 @@ void SPN(vector<PCB> &pcbs) {
 				ready.push(io_vector[i]);
 				io_vector.erase(io_vector.begin() + i);
 			}
+		}
+
 		lastUpdated = currentTime;
 
 		if (ready.empty()) {
@@ -96,8 +98,6 @@ void SPN(vector<PCB> &pcbs) {
 		}
 		//In this case switches it to false, so not running
 		current_PCB->set_running();
-		}
-
 		}
 
 	} while (completedProcesses < pcbs.size());

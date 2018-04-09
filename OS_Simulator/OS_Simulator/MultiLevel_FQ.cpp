@@ -17,7 +17,7 @@ using std::queue;
 //then there is a first come first serve queue at the bottom level
 //@param vector<PCB> pcbs are the processes to be run: must be in order from first to last arrival time for proper results
 //@param time1, time2, and time3 are the 3 time quantums for the descending round robin simulators
-void MultiLevel_FQ(vector<PCB> pcbs, int context_switch, int time1, int time2, int time3) {
+void MultiLevel_FQ(vector<PCB> &pcbs, int context_switch, int time1, int time2, int time3) {
 
 	//These are the queues of processes which are ready for execution (have arrived at the processor)
 	//ready1 is the highest priority queue down to ready3 which are round robin, 

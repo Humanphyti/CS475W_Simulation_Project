@@ -13,7 +13,7 @@
 using std::vector;
 using std::queue;
 
-void FCFS(vector<PCB> pcbs) {
+void FCFS(vector<PCB> &pcbs) {
 	queue<PCB> ready;
 	vector<PCB> io_vector;
 
@@ -40,7 +40,8 @@ void FCFS(vector<PCB> pcbs) {
 				ready.push(io_vector[i]);
 				io_vector.erase(io_vector.begin() + i);
 			}
-		
+		}
+
 		last_updated = current_time;
 
 		//If the ready queue is empty, jump to the first time with something in the ready queue
@@ -96,7 +97,7 @@ void FCFS(vector<PCB> pcbs) {
 			current_PCB->set_running();
 		}
 
-	}
+	
 	} while (completed_processes < pcbs.size());
 
 	delete current_PCB;

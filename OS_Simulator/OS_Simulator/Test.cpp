@@ -8,14 +8,16 @@
 #include "PCB.h"
 #include "ProcessTxt.h"
 
-
+//Our guess, is that including these files are causing linker errors by repeating inclusion
+//However, it is not reading the code from our other source files without doing so
+//A solution is currently to move the code for these methods into the same file as main, as seen below
+//For some cleanliness, the methods here have been condensed and the other source files are also available unaltered for easier viewing 
 //#include "FCFS.cpp"
 //#include "RoundRobin.cpp"
 //#include "SPN.cpp"
 //#include "Multicore.cpp"
 //#include "MultiLevel_FQ.cpp"
 //#include "calculate.cpp"
-
 
 #include <ctime>
 #include <iostream>
