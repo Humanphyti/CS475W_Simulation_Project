@@ -94,7 +94,7 @@ void Multicore(vector<PCB> &pcbs) {
 						execution = multicores[j].get_estimated_cpu;
 					}
 				}
-				current_time = execution;
+				current_time += execution;
 				//Manipulate the actual process data of all processes in multicores
 				for (int i = 0; i < multicores.size; i++) {
 					current_PCB = &multicores[i];
