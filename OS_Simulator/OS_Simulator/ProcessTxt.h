@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PROCESSTXT_H_
+#define PROCESSTXT_H_
 
 #include <iostream>
 #include <fstream>
@@ -25,3 +26,5 @@ void WriteFile() {
 		processesIn << '\n';
 	}
 }
+
+#endif

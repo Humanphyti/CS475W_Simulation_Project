@@ -1,12 +1,12 @@
 ﻿  Test.cpp
-c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\processtxt.h(19): warning C4018: '<': signed/unsigned mismatch
-c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(31): warning C4018: '<': signed/unsigned mismatch
-c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(37): warning C4018: '<': signed/unsigned mismatch
-c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(52): warning C4018: '<': signed/unsigned mismatch
-c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\fcfs.cpp(100): warning C4018: '<': signed/unsigned mismatch
-c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(64): warning C4101: 'avgWait': unreferenced local variable
-c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(62): warning C4101: 'avgTurnaround': unreferenced local variable
-c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(63): warning C4101: 'avgResponse': unreferenced local variable
-Test.obj : error LNK2005: "void __cdecl FCFS(class std::vector<class PCB,class std::allocator<class PCB> > &)" (?FCFS@@YAXAAV?$vector@VPCB@@V?$allocator@VPCB@@@std@@@std@@@Z) already defined in FCFS.obj
-C:\Users\thildahl20\Documents\GitHub\CS475W_Simulation_Project\OS_Simulator\Debug\OS_Simulator.exe : fatal error LNK1169: one or more multiply defined symbols found
+c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\processtxt.h(20): warning C4018: '<': signed/unsigned mismatch
+c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(52): warning C4018: '<': signed/unsigned mismatch
+c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(59): warning C4018: '<': signed/unsigned mismatch
+c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(75): warning C4018: '<': signed/unsigned mismatch
+c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(141): warning C4018: '<': signed/unsigned mismatch
+c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(149): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(182): warning C4101: 'avgWait': unreferenced local variable
+c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(180): warning C4101: 'avgTurnaround': unreferenced local variable
+c:\users\thildahl20\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(181): warning C4101: 'avgResponse': unreferenced local variable
+  OS_Simulator.vcxproj -> C:\Users\thildahl20\Documents\GitHub\CS475W_Simulation_Project\OS_Simulator\Debug\OS_Simulator.exe
+  OS_Simulator.vcxproj -> C:\Users\thildahl20\Documents\GitHub\CS475W_Simulation_Project\OS_Simulator\Debug\OS_Simulator.pdb (Partial PDB)

@@ -44,3 +44,10 @@ int getAvgWait(vector<PCB> &pcbs) {
 
 	return avg;
 }
+
+//Resets the changing values back to default for all processes by using the PCB reset() method
+void resetPCB(vector <PCB> &pcbs) {
+	for (int i = 0; i < pcbs.size(); i++) {
+		pcbs[i].reset();
+	}
+}

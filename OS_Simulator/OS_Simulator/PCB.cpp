@@ -125,3 +125,20 @@ int PCB::get_round()
 {
 	return round_count;
 }
+
+//This allows us to sort processes by execution time for shortest process next
+PCB PCB::operator<(PCB p) {
+	if (this->get_estimated_burst() < p.get_estimated_burst())
+		return *this;
+	else
+		return p;
+}
+
+//A method for clearing the data values on a process so it can be used on a different simulation
+void PCB::reset() {
+	cpu_burst = 0;
+	io_burst = 0;
+	wait = 0;
+	turnaround = 0;
+	response = -1;
+}

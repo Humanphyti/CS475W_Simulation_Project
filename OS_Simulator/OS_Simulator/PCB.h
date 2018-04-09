@@ -49,14 +49,6 @@ public:
 	//param ids is a vector of all previously used ids to ensure a unique one is created
 	void Randomize(vector<int> &ids);
 
-	//This allows us to sort processes by execution time for shortest process next
-	PCB operator<(PCB p) {
-		if (this->get_estimated_burst() < p.get_estimated_burst())
-			return *this;
-		else 
-			return p;
-	}
-
 	///Getters and Setters
 	int get_PID() { return PID; }
 	bool get_running() { return running; }
@@ -103,6 +95,13 @@ public:
 	//For multilevel feedback queue only, adjust round_count
 	void update_round();
 	int get_round();
+
+
+	//This allows us to sort processes by execution time for shortest process next
+	PCB operator<(PCB p); 
+
+	//A method for clearing the data values on a process so it can be used on a different simulation
+	void reset();
 };
 
 #endif
