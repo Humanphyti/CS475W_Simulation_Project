@@ -86,7 +86,7 @@ int PCB::get_remaining_time()
 //Should only be called once when a process execution is completed
 void PCB::update_wait(int time) 
 {
-	wait = time - arrival_time - estimated_burst;
+	wait = time - arrival_time - estimated_cpu; 
 }
 
 //increases burst time by given amount of time (time spent processing)

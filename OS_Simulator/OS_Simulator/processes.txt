@@ -1,0 +1,24 @@
+PID: 30608 Arrival: 89 Estimated Total Burst: 17 Estimated CPU: 8 Estimate IO: 9 Response: 0 Turnaround: 19 Wait: 2 
+PID: 31430 Arrival: 93 Estimated Total Burst: 41 Estimated CPU: 27 Estimate IO: 14 Response: 8 Turnaround: 65 Wait: 24 
+PID: 1150 Arrival: 98 Estimated Total Burst: 23 Estimated CPU: 4 Estimate IO: 19 Response: 5 Turnaround: 42 Wait: 19 
+PID: 6177 Arrival: 108 Estimated Total Burst: 72 Estimated CPU: 35 Estimate IO: 37 Response: 27 Turnaround: 192 Wait: 120 
+PID: 11305 Arrival: 128 Estimated Total Burst: 19 Estimated CPU: 2 Estimate IO: 17 Response: 18 Turnaround: 61 Wait: 42 
+PID: 3469 Arrival: 140 Estimated Total Burst: 22 Estimated CPU: 17 Estimate IO: 5 Response: 20 Turnaround: 99 Wait: 77 
+PID: 28514 Arrival: 148 Estimated Total Burst: 6 Estimated CPU: 6 Estimate IO: 0 Response: 14 Turnaround: 20 Wait: 14 
+PID: 1094 Arrival: 162 Estimated Total Burst: 12 Estimated CPU: 7 Estimate IO: 5 Response: 24 Turnaround: 68 Wait: 56 
+PID: 7518 Arrival: 165 Estimated Total Burst: 14 Estimated CPU: 6 Estimate IO: 8 Response: 35 Turnaround: 87 Wait: 73 
+PID: 22752 Arrival: 173 Estimated Total Burst: 120 Estimated CPU: 105 Estimate IO: 15 Response: 29 Turnaround: 410 Wait: 290 
+PID: 10826 Arrival: 180 Estimated Total Burst: 182 Estimated CPU: 25 Estimate IO: 157 Response: 36 Turnaround: 340 Wait: 158 
+PID: 13598 Arrival: 189 Estimated Total Burst: 73 Estimated CPU: 56 Estimate IO: 17 Response: 47 Turnaround: 299 Wait: 226 
+PID: 21852 Arrival: 206 Estimated Total Burst: 11 Estimated CPU: 8 Estimate IO: 3 Response: 59 Turnaround: 110 Wait: 99 
+PID: 3062 Arrival: 225 Estimated Total Burst: 2 Estimated CPU: 1 Estimate IO: 1 Response: 54 Turnaround: 104 Wait: 102 
+PID: 4211 Arrival: 303 Estimated Total Burst: 41 Estimated CPU: 17 Estimate IO: 24 Response: 51 Turnaround: 158 Wait: 117 
+PID: 21914 Arrival: 307 Estimated Total Burst: 27 Estimated CPU: 3 Estimate IO: 24 Response: 49 Turnaround: 121 Wait: 94 
+PID: 1338 Arrival: 422 Estimated Total Burst: 35 Estimated CPU: 3 Estimate IO: 32 Response: 41 Turnaround: 98 Wait: 63 
+PID: 11595 Arrival: 486 Estimated Total Burst: 28 Estimated CPU: 11 Estimate IO: 17 Response: 16 Turnaround: 92 Wait: 64 
+PID: 16756 Arrival: 487 Estimated Total Burst: 27 Estimated CPU: 2 Estimate IO: 25 Response: 17 Turnaround: 72 Wait: 45 
+PID: 10836 Arrival: 493 Estimated Total Burst: 133 Estimated CPU: 127 Estimate IO: 6 Response: 25 Turnaround: 222 Wait: 89 
+
+Average Turnaround Time: 133
+Average Response Time: 28
+Average Wait Time: 88

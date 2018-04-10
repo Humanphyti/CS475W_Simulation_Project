@@ -8,8 +8,8 @@
 #include "PCB.h"
 using namespace std;
 
-void WriteFile() {
-	vector<PCB> pcbs;
+void WriteFile(vector<PCB> pcbs, int avgT, int avgR, int avgW) {
+	//vector<PCB*> pcbs;
 	ofstream processesIn;
 	processesIn.open("processes.txt");
 
@@ -18,13 +18,24 @@ void WriteFile() {
 	}
 
 	for (int i = 0; i < pcbs.size(); i++) {
-		processesIn << pcbs[i].get_PID() << " ";
-		processesIn << pcbs[i].get_arrival() << " ";
-		processesIn << pcbs[i].get_estimated_burst() << " ";
-		processesIn << pcbs[i].get_estimated_cpu() << " ";
-		processesIn << pcbs[i].get_estimated_io() << " ";
+		processesIn << "PID: " << pcbs[i].get_PID() << " ";
+		processesIn << "Arrival: " << pcbs[i].get_arrival() << " ";
+		processesIn << "Estimated Total Burst: " << pcbs[i].get_estimated_burst() << " ";
+		processesIn << "Estimated CPU: " << pcbs[i].get_estimated_cpu() << " ";
+		processesIn << "Estimate IO: " << pcbs[i].get_estimated_io() << " ";
+		processesIn << "Response: " << pcbs[i].get_response() << " ";
+		processesIn << "Turnaround: " << pcbs[i].get_turnaround() << " ";
+		processesIn << "Wait: " << pcbs[i].get_wait() << " ";
+
 		processesIn << '\n';
 	}
+
+	processesIn << '\n';
+	processesIn << "Average Turnaround Time: " << avgT << endl;
+	processesIn << "Average Response Time: " << avgR << endl;
+	processesIn << "Average Wait Time: " << avgW << endl;
+
+
 }
 
 #endif
