@@ -26,26 +26,26 @@
     <ClCompile Include="Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="calculate.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="calculate.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="FCFS.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="FCFS.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Multicore.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Multicore.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="MultiLevel_FQ.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MultiLevel_FQ.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="PCB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RoundRobin.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="RoundRobin.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="SPN.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="SPN.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

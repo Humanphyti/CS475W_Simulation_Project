@@ -12,12 +12,12 @@
 //However, it is not reading the code from our other source files without doing so
 //A solution is currently to move the code for these methods into the same file as main, as seen below
 //For some cleanliness, the methods here have been condensed and the other source files are also available unaltered for easier viewing 
-//#include "FCFS.cpp"
-//#include "RoundRobin.cpp"
-//#include "SPN.cpp"
-//#include "Multicore.cpp"
-//#include "MultiLevel_FQ.cpp"
-//#include "calculate.cpp"
+//#include "FCFS.h"
+//#include "RoundRobin.h"
+//#include "SPN.h"
+//#include "Multicore.h"
+//#include "MultiLevel_FQ.h"
+//#include "calculate.h"
 
 #include <ctime>
 #include <iostream>
@@ -141,7 +141,7 @@ void RoundRobin(vector<PCB> pcbs, int context_switch, int time_splice) {
 
 		}
 	} while (completed_processes < pcbs.size());	//Loops until all processes have been completed
-
+	cout << "here";
 	delete current_PCB;
 }
 
@@ -191,32 +191,31 @@ int main() {
 	avgResponse = getAvgResponse(pcbs);
 	avgWait = getAvgWait(pcbs);
 	cout << "First Come First Served:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
-	reset(pcbs);
-	*/
+	//reset(pcbs);
+	
 	//Run Round Robin with time quantum = 5, context switch time = 2
 	RoundRobin(pcbs, 2, 5);
-	/*
 	avgTurnaround = getAvgTurnaround(pcbs);
 	avgResponse = getAvgResponse(pcbs);
 	avgWait = getAvgWait(pcbs);
 	cout << "Round Robin TQ: 5:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
-	reset(pcbs);
+	//reset(pcbs);
 
-	//Run Round Robin with time quantum = 10, context switch time = 2
+	*///Run Round Robin with time quantum = 10, context switch time = 2
 	RoundRobin(pcbs, 2, 10);
-	avgTurnaround = getAvgTurnaround(pcbs);
-	avgResponse = getAvgResponse(pcbs);
-	avgWait = getAvgWait(pcbs);
-	cout << "Round Robin TQ: 10:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
-	reset(pcbs);
-
+	//avgTurnaround = getAvgTurnaround(pcbs);
+	//avgResponse = getAvgResponse(pcbs);
+	//avgWait = getAvgWait(pcbs);
+	//cout << "Round Robin TQ: 10:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
+	//reset(pcbs);
+	/*
 	//Run Round Robin with time quantum = 20, context switch time = 2
 	RoundRobin(pcbs, 2, 20);
 	avgTurnaround = getAvgTurnaround(pcbs);
 	avgResponse = getAvgResponse(pcbs);
 	avgWait = getAvgWait(pcbs);
 	cout << "Round Robin TQ: 20:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
-	reset(pcbs);
+	//reset(pcbs);
 
 	//Run SPN
 	SPN(pcbs);
@@ -224,7 +223,7 @@ int main() {
 	avgResponse = getAvgResponse(pcbs);
 	avgWait = getAvgWait(pcbs);
 	cout << "Shortest Process Next:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
-	reset(pcbs);
+	//reset(pcbs);
 
 	//Run Multicore
 	Multicore(pcbs);
@@ -232,7 +231,7 @@ int main() {
 	avgResponse = getAvgResponse(pcbs);
 	avgWait = getAvgWait(pcbs);
 	cout << "Multicore:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
-	reset(pcbs);
+	//reset(pcbs);
 
 	//Run multilevel feedback queue with context switch time = 2, and time quantums 10, 20 and 30
 	MultiLevel_FQ(pcbs, 2, 10, 20, 30);
@@ -240,7 +239,7 @@ int main() {
 	avgResponse = getAvgResponse(pcbs);
 	avgWait = getAvgWait(pcbs);
 	cout << "Multilevel Feedback Queue TQs: 10, 20, 30:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
-	reset(pcbs);
+	//reset(pcbs);
 
 	//Run multilevel feedback queue with context switch time = 2, and time quantums 5, 10 and 15
 	MultiLevel_FQ(pcbs, 2, 5, 10, 15);
@@ -248,7 +247,7 @@ int main() {
 	avgResponse = getAvgResponse(pcbs);
 	avgWait = getAvgWait(pcbs);
 	cout << "Multilevel Feedback Queue TQs: 5, 10, 15:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
-
 	*/
+	
 	return 0;
 }

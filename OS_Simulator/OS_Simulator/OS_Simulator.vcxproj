@@ -143,13 +143,13 @@
     <ClInclude Include="ProcessTxt.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="calculate.cpp" />
-    <ClCompile Include="FCFS.cpp" />
-    <ClCompile Include="Multicore.cpp" />
-    <ClCompile Include="MultiLevel_FQ.cpp" />
+    <ClCompile Include="calculate.h" />
+    <ClCompile Include="FCFS.h" />
+    <ClCompile Include="Multicore.h" />
+    <ClCompile Include="MultiLevel_FQ.h" />
     <ClCompile Include="PCB.cpp" />
-    <ClCompile Include="RoundRobin.cpp" />
-    <ClCompile Include="SPN.cpp" />
+    <ClCompile Include="RoundRobin.h" />
+    <ClCompile Include="SPN.h" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
