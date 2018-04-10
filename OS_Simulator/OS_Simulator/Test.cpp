@@ -39,7 +39,7 @@ int main() {
 	//Creating PIDs
 	vector<PCB> pcbs;
 
-	for (int i = 0; i < 20; i++) {
+	for (int i = 0; i < 1000; i++) {
 		PCB p1;
 		p1.Randomize(ids);
 		pcbs.push_back(p1);
@@ -68,9 +68,8 @@ int main() {
 
 	//Forced to use pass by value if ran this way, but to increase efficiency, we just copied methods into main to test
 	//RoundRobin(pcbs, 2, 10);
-
-	///Simulation
-	
+		///Simulation
+	///RoundRobin
 	//This is the queue of processes which are ready for execution (have arrived at the processor)
 	int context_switch = 2;
 	int time_splice = 10;
