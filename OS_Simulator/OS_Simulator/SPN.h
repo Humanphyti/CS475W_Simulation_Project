@@ -1,3 +1,4 @@
+#pragma once
 // Created by Eben Schumann
 // 04/03/2018
 
