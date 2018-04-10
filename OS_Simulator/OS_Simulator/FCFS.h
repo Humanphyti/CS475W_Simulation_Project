@@ -1,3 +1,4 @@
+#pragma once
 ////////////////////////////////////
 // Authors: Andrew McNeill 
 // Operating System Simulator
