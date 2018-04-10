@@ -1,3 +1,4 @@
+#pragma once
 ////////////////////////////////////
 // Authors: Tristan Hildahl 
 // Operating System Simulator
@@ -141,4 +142,9 @@ void RoundRobin(vector<PCB> pcbs, int context_switch, int time_splice) {
 		}
 	} while (completed_processes < pcbs.size());	//Loops until all processes have been completed
 
+<<<<<<< HEAD
 }
+=======
+	delete current_PCB;
+}
+>>>>>>> 13ee7bafd7cf8398110fd91b169393ded0a7c5eb

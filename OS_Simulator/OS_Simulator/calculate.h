@@ -1,3 +1,4 @@
+#pragma once
 ////////////////////////////////////
 // Authors: Andrew, Eben and Tristan 
 // Operating System Simulator
