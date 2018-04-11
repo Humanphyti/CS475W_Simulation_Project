@@ -60,14 +60,16 @@ int main() {
 			}
 		}
 	}
-	WriteFile(pcbs, "Other");
+	//WriteFile(pcbs, "Other");
 
 	vector<PCB> pcbsFCFS;
 	vector<PCB> pcbsSPN;
+	vector<PCB> pcbsML;
 	int k = 0;
 	for ( k; k < pcbs.size(); k++){
 		pcbsFCFS.push_back(pcbs[k]);
 		pcbsSPN.push_back(pcbs[k]);
+		pcbsML.push_back(pcbs[k]);
 	}
 	//Algorithm analysis information
 	int avgTurnaround;
@@ -76,6 +78,7 @@ int main() {
 
 	//Forced to use pass by value if ran this way, but to increase efficiency, we just copied methods into main to test
 	//RoundRobin(pcbs, 2, 10);
+
 		///Simulation
 	///RoundRobin
 	//This is the queue of processes which are ready for execution (have arrived at the processor)
@@ -189,7 +192,7 @@ int main() {
 					current_PCB->update_wait(current_time);
 					current_PCB->set_turnaround();
 
-					std::cout << "Process " << current_PCB->get_PID() << " completed at time " << current_time << std::endl;
+					//std::cout << "Process " << current_PCB->get_PID() << " completed at time " << current_time << std::endl;
 					completed_processes++;
 				}
 			}
@@ -203,8 +206,7 @@ int main() {
 	} while (completed_processes < pcbs.size());	//Loops until all processes have been completed
 
 	
-
-
+	cout << "Finished Round Robin\n";
 
 	///Analytics
 	//Get avg turnaround
@@ -229,10 +231,11 @@ int main() {
 	double avgW = sum / pcbs.size();
 
 	//Create the file
-	//WriteFile(pcbs, avgT, avgR, avgW, "RoundRobin");
-	cout << avgT << endl << avgR << endl << avgW << endl;
-	
-/*
+	WriteFile(pcbs, avgT, avgR, avgW, "RoundRobin");
+	cout << avgT << endl << avgR << endl << avgW << endl << endl;
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///*
 	///SPN
 	int context_switchSPN = 2;
 
@@ -305,7 +308,7 @@ int main() {
 			while (!sortedSPN) {
 				sortedSPN = true;
 				for (int i = 0; i < pcbsSPN.size() - 1; i++) {
-					if (pcbsSPN[i].get_estimated_burst() > pcbsSPN[i + 1].get_estimated_burst()) {
+					if (pcbsSPN[i].get_estimated_burst() > pcbsSPN[i + 1].get_estimated_burst())   {
 						sortedSPN = false;
 						PCB tempSPN = pcbsSPN[i];
 						pcbsSPN[i] = pcbsSPN[i + 1];
@@ -322,12 +325,12 @@ int main() {
 			if (current_PCBSPN->get_response() == -1)
 				current_PCBSPN->set_response(current_timeSPN);
 
-			//if (current_PCBSPN->get_estimated_io() != current_PCBSPN->get_io()) {
-				//current_PCBSPN->update_io();
+			if (current_PCBSPN->get_estimated_io() != current_PCBSPN->get_io()) {
+				current_PCBSPN->update_io();
 				//std::cout << "Ran process " << current_PCBSPN->get_PID() << " with an IO device." << std::endl;
 				//When IO is finished, place it in the io queue
-				//io_vectorSPN.push_back(current_PCBSPN);
-			//}
+				io_vectorSPN.push_back(current_PCBSPN);
+			}
 			else {
 				//Update processed time by the remaining amount of processing time required
 				int execution = current_PCBSPN->get_remaining_time();
@@ -340,7 +343,7 @@ int main() {
 				current_PCBSPN->update_wait(current_timeSPN);
 				current_PCBSPN->set_turnaround();
 
-				std::cout << "Process " << current_PCBSPN->get_PID() << " completed." << std::endl;
+				//std::cout << "Process " << current_PCBSPN->get_PID() << " completed." << std::endl;
 				completed_processesSPN++;
 			}
 			//In this case switches it to false, so not running
@@ -348,6 +351,8 @@ int main() {
 		}
 
 	} while (completed_processesSPN < pcbsSPN.size());
+	
+	cout << "Finished SPN\n";
 
 	///Analytics
 	//Get avg turnaround
@@ -370,12 +375,13 @@ int main() {
 		sumSPN += pcbsSPN[i].get_wait();
 	}
 	double avgWSPN = sumSPN / pcbsSPN.size();
-	*/
+//	*/
 
 	//Create the file
-	//WriteFile(pcbsSPN, avgTSPN, avgRSPN, avgWSPN, "SPN");
-	cout << endl << endl << endl;
-///*
+	WriteFile(pcbsSPN, avgTSPN, avgRSPN, avgWSPN, "SPN");
+	cout << avgTSPN << endl << avgRSPN << endl << avgWSPN << endl << endl;
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///*
 	///FCFS
 	queue<PCB*> readyFCFS;
 	//This is a vector that stores all of the processes that have been responded to, but are waiting for io to complete
@@ -466,7 +472,7 @@ int main() {
 				current_PCBFCFS->update_wait(current_timeFCFS);
 				current_PCBFCFS->set_turnaround();
 
-				//std::cout << "Process " << current_PCB->get_PID() << " completed." << std::endl;
+				//std::cout << "Process " << current_PCBFCFS->get_PID() << " completed." << std::endl;
 				completed_processesFCFS++;
 			}
 			//In this case switches it to false, so not running
@@ -475,6 +481,8 @@ int main() {
 
 
 	} while (completed_processesFCFS < pcbsFCFS.size());
+
+	cout << "Finished FCFS\n";
 
 	///Analytics
 	//Get avg turnaround
@@ -490,7 +498,6 @@ int main() {
 		sumFCFS += pcbsFCFS[i].get_response();
 	}
 	double avgRFCFS = sumFCFS / pcbsFCFS.size();
-	cout << "Here" << endl;
 	//Get avg wait
 	sumFCFS = 0;
 	for (int i = 0; i < pcbsFCFS.size(); i++) {
@@ -498,8 +505,225 @@ int main() {
 	}
 	double avgWFCFS = sumFCFS / pcbsFCFS.size();
 
+	cout << avgTFCFS << endl << avgRFCFS << endl << avgWFCFS << endl << endl;
+
 	//Create the file
-	//WriteFile(pcbsFCFS, avgTFCFS, avgRFCFS, avgWFCFS, "FCFS");
+	WriteFile(pcbsFCFS, avgTFCFS, avgRFCFS, avgWFCFS, "FCFS");
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//These are the queues of processes which are ready for execution (have arrived at the processor)
+	//ready1 is the highest priority queue down to ready3 which are round robin, 
+	//then readyFCFS is the lowest priority and is used for first come first serve
+	queue<PCB*> ready1, ready2, ready3, readyFCFSML;
+
+	int time1 = 5, time2 = 10, time3 = 15;
+
+	//Rather than be input a set time quantum, it will be changed to 3 different values depending on which RR queue
+	int time_spliceML;
+
+	//This is a vector that stores all of the processes that have been responded to, but are waiting for io to complete
+	vector<PCB*> io_vectorML;
+
+	//Uses pointer to the next object in order to affect the actual PCB object in memory
+	PCB *current_PCBML;
+
+	//This is the last time the processor checked for incoming processes  
+	int last_updatedML = -1;
+	//This is the current time of the processor
+	int current_timeML = 0;
+
+	//This is the number of completed processes, will loop until all processes in pcbs are completed
+	int completed_processesML = 0;
+	//Total amount of time spent doing context switches
+	int total_contextML = 0;
+
+
+	//Until every process is completed, continue processing using round robin
+	do {
+		//This adds all of the processes that have arrived since last execution started into the ready RR queue
+		for (int i = 0; i < pcbsML.size(); i++) {
+			//If the arrival time for a process is between the time last checked and current time, add it to the ready RR queue
+			if (pcbsML[i].get_arrival() <= current_timeML && pcbsML[i].get_arrival() > last_updatedML)
+				ready1.push(&pcbsML[i]);
+		}
+
+		//This adds all of the processes that have finished their io execution into the ready RR queue
+		for (int i = 0; i < io_vectorML.size(); i++) {
+			//If the current time exceeds the time necessary to finish the io portion of the program, remove from vector and place in ready queue
+			if (io_vectorML[i]->get_response() + io_vectorML[i]->get_io() <= current_timeML) {
+				ready1.push(io_vectorML[i]);
+				io_vectorML.erase(io_vectorML.begin() + i);
+			}
+		}
+
+		last_updatedML = current_timeML;
+
+		//If all queues are empty, jump to the first time with something able to go in to the ready queue
+		//Find the next time something enters, or shortest time between remaining arrival times and io completion times
+		if (ready1.empty() && ready2.empty() && ready3.empty() && readyFCFS.empty()) {
+
+			//This will be the next time the cpu is running a process, and thus the time to start keeping track of the cpu again
+			int shortest_timeML = 999999;
+
+			for (int j = 0; j < pcbsML.size(); j++) {
+				//Check to see if a new process arrives first
+				//				cout << pcbs[j].get_PID() << "has response " << pcbs[j].get_response() << endl;
+				if (pcbsML[j].get_response() == -1 && pcbsML[j].get_arrival() < shortest_timeML)
+					shortest_timeML = pcbsML[j].get_arrival();
+				//or if a (previously responded to) io-running device becomes ready for cpu processing first
+				//	if (pcbs[j].get_response() != -1 && (pcbs[j].get_response() + pcbs[j].get_io() + pcbs[j].get_arrival()) < shortest_time)
+				//		shortest_time = pcbs[j].get_response() + pcbs[j].get_io();
+			}
+
+			for (int j = 0; j < io_vectorML.size(); j++) {
+				if ((io_vectorML[j]->get_response() + io_vectorML[j]->get_io() + io_vectorML[j]->get_arrival()) < shortest_timeML)
+					shortest_timeML = io_vectorML[j]->get_response() + io_vectorML[j]->get_io();
+			}
+			current_timeML = shortest_timeML;
+		}
+		//else there is a process ready, so get the next process
+		else {
+			//The processor will prioritize the upper queues and only run from the lower queues if the upper levels are empty
+			//This gets the proper process to run next based on which queues are empty
+			//Also sets the time quantum depending on which queue is running this instance
+			if (ready1.empty() && ready2.empty() && ready3.empty()) {
+				current_PCBML = readyFCFSML.front();
+				readyFCFSML.pop();
+
+				time_spliceML = current_PCBML->get_remaining_time();
+			}
+			else if (ready1.empty() && ready2.empty()) {
+				current_PCBML = ready3.front();
+				ready3.pop();
+
+				time_spliceML = time3;
+			}
+			else if (ready1.empty()) {
+				current_PCBML = ready2.front();
+				ready2.pop();
+
+				time_spliceML = time2;
+			}
+			else {
+				current_PCBML = ready1.front();
+				ready1.pop();
+
+				time_spliceML = time1;
+			}
+
+			current_PCBML->set_running();
+
+			//If the process has not been reacted to yet, set response time to current time
+			if (current_PCBML->get_response() == -1)
+				current_PCBML->set_response(current_timeML);
+
+
+			if (current_PCBML->get_estimated_io() != current_PCBML->get_io()) {
+				current_PCBML->update_io();
+				//std::cout << "Ran process " << current_PCB->get_PID() << " with an IO device." << std::endl;
+				//When IO is finished, place it in the io queue
+				io_vectorML.push_back(current_PCBML);
+			}
+			//If it is a cpu bound process for this execution period
+			else {
+				//if the process will not finish during the current execution phase add set execution time and put at the back of the ready queue
+				int executionML = current_PCBML->get_remaining_time();
+				if (executionML > time_spliceML) {
+					//Update processed time by time splice
+					current_PCBML->update_cpu(time_spliceML);
+					//std::cout << "Ran process " << current_PCB->get_PID() << " for " << time_splice << std::endl;
+
+					current_timeML += time_spliceML;
+
+					//Update number of times this process has been in this queue
+					current_PCBML->update_round();
+
+					//If it has been in the queue twice, place incomplete process at the back of the next lowest queue
+					//Since the counter is updated prior, it will be 1 after first time through, then it will be reset at 2 to be 0 after the second time through
+					if (current_PCBML->get_round() == 0) {
+						//If it was in RR queue 1: ready1, move to ready2
+						if (time_spliceML == time1)
+							ready2.push(current_PCBML);
+
+						//If it was in RR queue 2: ready2, move to ready3
+						if (time_spliceML == time2)
+							ready3.push(current_PCBML);
+
+						//If it was in RR queue 3: ready3, move to ready4
+						if (time_spliceML == time3)
+							readyFCFSML.push(current_PCBML);
+
+						//Note, if it was in readyFCFS it will be completed next execution cycle so it will not be checked here
+					}
+					//It stays in the queue it was before
+					else {
+						if (time_spliceML == time1)
+							ready1.push(current_PCBML);
+						if (time_spliceML == time2)
+							ready2.push(current_PCBML);
+						if (time_spliceML == time3)
+							ready3.push(current_PCBML);
+						//Again, readyFCFS would finish, and thus not reach this and it would not need to be placed in a queue
+					}
+				}
+				//the process will finish during the current execution phase, so finish and remove process
+				else {
+					//Update processed time by the remaining amount of processing time required
+					current_PCBML->update_cpu(executionML);
+					//std::cout << "Ran process " << current_PCB->get_PID() << " for " << execution << std::endl;
+
+					current_timeML += executionML;
+
+					//Finalize values for the current process and do not put it back in queue: process is completed
+					current_PCBML->update_wait(current_timeML);
+					current_PCBML->set_turnaround();
+
+					//std::cout << "Process " << current_PCBML->get_PID() << " completed." << std::endl;
+					completed_processesML++;
+				}
+			}
+			//In this case switches it to false, so not running
+			current_PCBML->set_running();
+
+			current_timeML += context_switch;
+			total_contextML += context_switch;
+		}
+	} while (completed_processesML < pcbsML.size());	//Loops until all processes have been completed
+
+
+	cout << "Finished Multilevel Feedback Queue\n";
+
+	///Analytics
+	//Get avg turnaround
+	int sumML = 0;
+	for (int i = 0; i < pcbsML.size(); i++) {
+		sumML += pcbsML[i].get_turnaround();
+	}
+	double avgTML = sumML / pcbsML.size();
+
+	//Get avg response
+	sumML = 0;
+	for (int i = 0; i < pcbsML.size(); i++) {
+		sumML += pcbsML[i].get_response();
+	}
+	double avgRML = sumML / pcbsML.size();
+	//Get avg wait
+	sumML = 0;
+	for (int i = 0; i < pcbsML.size(); i++) {
+		sumML += pcbsML[i].get_wait();
+	}
+	double avgWML = sumML / pcbsML.size();
+
+	cout << avgTML << endl << avgRML << endl << avgWML << endl << endl;
+
+	//Create the file
+	WriteFile(pcbsML, avgTML, avgRML, avgWML, "ML");
+
+
+
+
+
+
 	//*/
 	/*
 	///Tests

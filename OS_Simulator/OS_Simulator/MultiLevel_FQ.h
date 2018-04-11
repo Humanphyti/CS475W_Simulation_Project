@@ -23,13 +23,13 @@ void MultiLevel_FQ(vector<PCB> &pcbs, int context_switch, int time1, int time2, 
 	//These are the queues of processes which are ready for execution (have arrived at the processor)
 	//ready1 is the highest priority queue down to ready3 which are round robin, 
 	//then readyFCFS is the lowest priority and is used for first come first serve
-	queue<PCB> ready1, ready2, ready3, readyFCFS;
+	queue<PCB*> ready1, ready2, ready3, readyFCFS;
 
 	//Rather than be input a set time quantum, it will be changed to 3 different values depending on which RR queue
 	int time_splice;
 
 	//This is a vector that stores all of the processes that have been responded to, but are waiting for io to complete
-	vector<PCB> io_vector;
+	vector<PCB*> io_vector;
 
 	//Uses pointer to the next object in order to affect the actual PCB object in memory
 	PCB *current_PCB;
@@ -51,13 +51,13 @@ void MultiLevel_FQ(vector<PCB> &pcbs, int context_switch, int time1, int time2, 
 		for (int i = 0; i < pcbs.size(); i++) {
 			//If the arrival time for a process is between the time last checked and current time, add it to the ready RR queue
 			if (pcbs[i].get_arrival() <= current_time && pcbs[i].get_arrival() > last_updated)
-				ready1.push(pcbs[i]);
+				ready1.push(&pcbs[i]);
 		}
 
 		//This adds all of the processes that have finished their io execution into the ready RR queue
 		for (int i = 0; i < io_vector.size(); i++) {
 			//If the current time exceeds the time necessary to finish the io portion of the program, remove from vector and place in ready queue
-			if (io_vector[i].get_response() + io_vector[i].get_io() <= current_time) {
+			if (io_vector[i]->get_response() + io_vector[i]->get_io() <= current_time) {
 				ready1.push(io_vector[i]);
 				io_vector.erase(io_vector.begin() + i);
 			}
@@ -68,18 +68,24 @@ void MultiLevel_FQ(vector<PCB> &pcbs, int context_switch, int time1, int time2, 
 		//If all queues are empty, jump to the first time with something able to go in to the ready queue
 		//Find the next time something enters, or shortest time between remaining arrival times and io completion times
 		if (ready1.empty() && ready2.empty() && ready3.empty() && readyFCFS.empty()) {
+
 			//This will be the next time the cpu is running a process, and thus the time to start keeping track of the cpu again
-			int shortest_time = NULL;
+			int shortest_time = 999999;
 
 			for (int j = 0; j < pcbs.size(); j++) {
 				//Check to see if a new process arrives first
+				//				cout << pcbs[j].get_PID() << "has response " << pcbs[j].get_response() << endl;
 				if (pcbs[j].get_response() == -1 && pcbs[j].get_arrival() < shortest_time)
 					shortest_time = pcbs[j].get_arrival();
 				//or if a (previously responded to) io-running device becomes ready for cpu processing first
-				if (pcbs[j].get_response() != -1 && pcbs[j].get_response() + pcbs[j].get_io() < shortest_time)
-					shortest_time = pcbs[j].get_response() + pcbs[j].get_io();
+				//	if (pcbs[j].get_response() != -1 && (pcbs[j].get_response() + pcbs[j].get_io() + pcbs[j].get_arrival()) < shortest_time)
+				//		shortest_time = pcbs[j].get_response() + pcbs[j].get_io();
 			}
 
+			for (int j = 0; j < io_vector.size(); j++) {
+				if ((io_vector[j]->get_response() + io_vector[j]->get_io() + io_vector[j]->get_arrival()) < shortest_time)
+					shortest_time = io_vector[j]->get_response() + io_vector[j]->get_io();
+			}
 			current_time = shortest_time;
 		}
 		//else there is a process ready, so get the next process
@@ -88,25 +94,25 @@ void MultiLevel_FQ(vector<PCB> &pcbs, int context_switch, int time1, int time2, 
 			//This gets the proper process to run next based on which queues are empty
 			//Also sets the time quantum depending on which queue is running this instance
 			if (ready1.empty() && ready2.empty() && ready3.empty()) {
-				*current_PCB = readyFCFS.front();
+				current_PCB = readyFCFS.front();
 				readyFCFS.pop();
 
 				time_splice = current_PCB->get_remaining_time();
 			}
 			else if (ready1.empty() && ready2.empty()) {
-				*current_PCB = ready3.front();
+				current_PCB = ready3.front();
 				ready3.pop();
 
 				time_splice = time3;
 			}
 			else if (ready1.empty()) {
-				*current_PCB = ready2.front();
+				current_PCB = ready2.front();
 				ready2.pop();
 
 				time_splice = time2;
 			}
 			else {
-				*current_PCB = ready1.front();
+				current_PCB = ready1.front();
 				ready1.pop();
 
 				time_splice = time1;
@@ -123,7 +129,7 @@ void MultiLevel_FQ(vector<PCB> &pcbs, int context_switch, int time1, int time2, 
 				current_PCB->update_io();
 				std::cout << "Ran process " << current_PCB->get_PID() << " with an IO device." << std::endl;
 				//When IO is finished, place it in the io queue
-				io_vector.push_back(*current_PCB);
+				io_vector.push_back(current_PCB);
 			}
 			//If it is a cpu bound process for this execution period
 			else {
@@ -144,26 +150,26 @@ void MultiLevel_FQ(vector<PCB> &pcbs, int context_switch, int time1, int time2, 
 					if (current_PCB->get_round() == 0) {
 						//If it was in RR queue 1: ready1, move to ready2
 						if (time_splice == time1) 
-							ready2.push(*current_PCB);
+							ready2.push(current_PCB);
 
 						//If it was in RR queue 2: ready2, move to ready3
 						if (time_splice == time2)
-							ready3.push(*current_PCB);
+							ready3.push(current_PCB);
 
 						//If it was in RR queue 3: ready3, move to ready4
 						if (time_splice == time3)
-							readyFCFS.push(*current_PCB);
+							readyFCFS.push(current_PCB);
 
 						//Note, if it was in readyFCFS it will be completed next execution cycle so it will not be checked here
 					}
 					//It stays in the queue it was before
 					else {
 						if (time_splice == time1)
-							ready1.push(*current_PCB);
+							ready1.push(current_PCB);
 						if (time_splice == time2)
-							ready2.push(*current_PCB);						
+							ready2.push(current_PCB);						
 						if (time_splice == time3)
-							ready3.push(*current_PCB);
+							ready3.push(current_PCB);
 						//Again, readyFCFS would finish, and thus not reach this and it would not need to be placed in a queue
 					}
 				}
@@ -191,5 +197,5 @@ void MultiLevel_FQ(vector<PCB> &pcbs, int context_switch, int time1, int time2, 
 		}
 	} while (completed_processes < pcbs.size());	//Loops until all processes have been completed
 
-	delete current_PCB;
+	//delete current_PCB;
 }

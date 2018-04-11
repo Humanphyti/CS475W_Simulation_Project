@@ -8,9 +8,9 @@
 #include "PCB.h"
 using namespace std;
 
-//int avgT, int avgR, int avgW,
+//
 
-void WriteFile(vector<PCB> pcbs, string name) {
+void WriteFile(vector<PCB> pcbs, int avgT, int avgR, int avgW, string name) {
 	//vector<PCB*> pcbs;
 	int differentiation = 1;
 	ofstream processesIn;
@@ -20,6 +20,8 @@ void WriteFile(vector<PCB> pcbs, string name) {
 		processesIn.open("processesSPN.txt");
 	else if (name == "FCFS")
 		processesIn.open("processesFCFS.txt");
+	else if (name == "ML")
+		processesIn.open("processesML.txt");
 	else
 		processesIn.open("processes.txt");
 
