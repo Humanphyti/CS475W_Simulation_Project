@@ -44,6 +44,9 @@ void WriteFile(vector<PCB> pcbs, string name) {
 	//processesIn << "Average Response Time: " << avgR << endl;
 	//processesIn << "Average Wait Time: " << avgW << endl;
 
+	processesIn.close();
+
+	return;
 };
 
 

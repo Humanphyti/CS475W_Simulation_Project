@@ -62,7 +62,7 @@ int main() {
 	}
 	WriteFile(pcbs, "Other");
 
-	/*vector<PCB> pcbsFCFS;
+	vector<PCB> pcbsFCFS;
 	vector<PCB> pcbsSPN;
 	int k = 0;
 	for ( k; k < pcbs.size(); k++){
@@ -81,7 +81,7 @@ int main() {
 	//This is the queue of processes which are ready for execution (have arrived at the processor)
 	int context_switch = 2;
 	int time_splice = 10;
-
+	
 	queue<PCB*> ready;
 	//This is a vector that stores all of the processes that have been responded to, but are waiting for io to complete
 	vector<PCB*> io_vector;
@@ -229,9 +229,10 @@ int main() {
 	double avgW = sum / pcbs.size();
 
 	//Create the file
-	WriteFile(pcbs, avgT, avgR, avgW, "RoundRobin");
-
-
+	//WriteFile(pcbs, avgT, avgR, avgW, "RoundRobin");
+	cout << avgT << endl << avgR << endl << avgW << endl;
+	
+/*
 	///SPN
 	int context_switchSPN = 2;
 
@@ -296,8 +297,10 @@ int main() {
 		}
 		//else the ready queue is not empty, so get the next process
 		else {
+			
 			//sort the ready queue first then use the below code
 			current_PCBSPN = readySPN.front();
+			
 			bool sortedSPN = false;
 			while (!sortedSPN) {
 				sortedSPN = true;
@@ -334,10 +337,10 @@ int main() {
 				current_timeSPN += execution;
 
 				//Finalize values for the current process and do not put it back in queue: process is completed
-				current_PCBSPN->update_wait(current_time);
+				current_PCBSPN->update_wait(current_timeSPN);
 				current_PCBSPN->set_turnaround();
 
-				//std::cout << "Process " << current_PCBSPN->get_PID() << " completed." << std::endl;
+				std::cout << "Process " << current_PCBSPN->get_PID() << " completed." << std::endl;
 				completed_processesSPN++;
 			}
 			//In this case switches it to false, so not running
@@ -352,7 +355,7 @@ int main() {
 	for (int i = 0; i < pcbsSPN.size(); i++) {
 		sumSPN += pcbsSPN[i].get_turnaround();
 	}
-	double avgTSPN = sum / pcbsSPN.size();
+	double avgTSPN = sumSPN / pcbsSPN.size();
 
 	//Get avg response
 	sumSPN = 0;
@@ -367,10 +370,12 @@ int main() {
 		sumSPN += pcbsSPN[i].get_wait();
 	}
 	double avgWSPN = sumSPN / pcbsSPN.size();
+	*/
 
 	//Create the file
-	WriteFile(pcbsSPN, avgTSPN, avgRSPN, avgWSPN, "SPN");
-	
+	//WriteFile(pcbsSPN, avgTSPN, avgRSPN, avgWSPN, "SPN");
+	cout << endl << endl << endl;
+///*
 	///FCFS
 	queue<PCB*> readyFCFS;
 	//This is a vector that stores all of the processes that have been responded to, but are waiting for io to complete
@@ -458,7 +463,7 @@ int main() {
 				current_timeFCFS += executionFCFS;
 
 				//Finalize values for the current process and do not put it back in queue: process is completed
-				current_PCB->update_wait(current_timeFCFS);
+				current_PCBFCFS->update_wait(current_timeFCFS);
 				current_PCBFCFS->set_turnaround();
 
 				//std::cout << "Process " << current_PCB->get_PID() << " completed." << std::endl;
@@ -477,12 +482,12 @@ int main() {
 	for (int i = 0; i < pcbsFCFS.size(); i++) {
 		sumFCFS += pcbsFCFS[i].get_turnaround();
 	}
-	double avgTFCFS = sum / pcbsFCFS.size();
+	double avgTFCFS = sumFCFS / pcbsFCFS.size();
 
 	//Get avg response
 	sumFCFS = 0;
 	for (int i = 0; i < pcbsFCFS.size(); i++) {
-		sumSPN += pcbsFCFS[i].get_response();
+		sumFCFS += pcbsFCFS[i].get_response();
 	}
 	double avgRFCFS = sumFCFS / pcbsFCFS.size();
 	cout << "Here" << endl;
@@ -494,8 +499,8 @@ int main() {
 	double avgWFCFS = sumFCFS / pcbsFCFS.size();
 
 	//Create the file
-	WriteFile(pcbsFCFS, avgTFCFS, avgRFCFS, avgWFCFS, "FCFS");
-	*/
+	//WriteFile(pcbsFCFS, avgTFCFS, avgRFCFS, avgWFCFS, "FCFS");
+	//*/
 	/*
 	///Tests
 	//Run FCFC
@@ -560,6 +565,6 @@ int main() {
 	avgWait = getAvgWait(pcbs);
 	cout << "Multilevel Feedback Queue TQs: 5, 10, 15:: Average Turnaround" << avgTurnaround << " Average Response " << avgResponse << " Average Wait: " << avgWait << endl;
 	*/
-	
+
 	return 0;
 }
