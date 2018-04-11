@@ -8,18 +8,27 @@
 #include "PCB.h"
 using namespace std;
 
-void WriteFile(vector<PCB> pcbs, int avgT, int avgR, int avgW) {
+//int avgT, int avgR, int avgW,
+
+void WriteFile(vector<PCB> pcbs, string name) {
 	//vector<PCB*> pcbs;
+	int differentiation = 1;
 	ofstream processesIn;
-	processesIn.open("processes.txt");
+	if (name == "RoundRobin")
+		processesIn.open("processesRR.txt");
+	else if (name == "SPN")
+		processesIn.open("processesSPN.txt");
+	else if (name == "FCFS")
+		processesIn.open("processesFCFS.txt");
+	else
+		processesIn.open("processes.txt");
 
 	if (!processesIn.is_open()) {
 		cout << "File Could not be opened." << endl;
 	}
 
 	for (int i = 0; i < pcbs.size(); i++) {
-		processesIn << "PID: " << pcbs[i].get_PID() << " ";
-		processesIn << "Arrival: " << pcbs[i].get_arrival() << " ";
+		processesIn << "PID: " << pcbs[i].get_PID() << " ";		processesIn << "Arrival: " << pcbs[i].get_arrival() << " ";
 		processesIn << "Estimated Total Burst: " << pcbs[i].get_estimated_burst() << " ";
 		processesIn << "Estimated CPU: " << pcbs[i].get_estimated_cpu() << " ";
 		processesIn << "Estimate IO: " << pcbs[i].get_estimated_io() << " ";
@@ -29,13 +38,13 @@ void WriteFile(vector<PCB> pcbs, int avgT, int avgR, int avgW) {
 
 		processesIn << '\n';
 	}
+	
+	//processesIn << '\n';
+	//processesIn << "Average Turnaround Time: " << avgT << endl;
+	//processesIn << "Average Response Time: " << avgR << endl;
+	//processesIn << "Average Wait Time: " << avgW << endl;
 
-	processesIn << '\n';
-	processesIn << "Average Turnaround Time: " << avgT << endl;
-	processesIn << "Average Response Time: " << avgR << endl;
-	processesIn << "Average Wait Time: " << avgW << endl;
+};
 
-
-}
 
 #endif

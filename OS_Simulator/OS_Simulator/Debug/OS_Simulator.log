@@ -1,18 +1,6 @@
 ﻿  Test.cpp
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\processtxt.h(20): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\processtxt.h(30): warning C4018: '<': signed/unsigned mismatch
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(36): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(54): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(97): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(105): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(121): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(131): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(195): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(204): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(211): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(218): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(224): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(67): warning C4101: 'avgWait': unreferenced local variable
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(65): warning C4101: 'avgTurnaround': unreferenced local variable
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(66): warning C4101: 'avgResponse': unreferenced local variable
   OS_Simulator.vcxproj -> D:\Documents\GitHub\CS475W_Simulation_Project\OS_Simulator\Debug\OS_Simulator.exe
   OS_Simulator.vcxproj -> D:\Documents\GitHub\CS475W_Simulation_Project\OS_Simulator\Debug\OS_Simulator.pdb (Partial PDB)
