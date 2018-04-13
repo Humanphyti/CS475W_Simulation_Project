@@ -17,40 +17,40 @@ d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(287): warning C4018: '<': signed/unsigned mismatch
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(297): warning C4018: '<': signed/unsigned mismatch
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(312): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(355): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(362): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(369): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(376): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(383): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(408): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(416): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(432): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(442): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(485): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(492): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(499): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(505): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(513): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(546): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(553): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(570): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(580): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(693): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(701): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(708): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(714): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(722): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(744): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(755): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(771): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(788): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(800): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(809): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(845): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(850): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(358): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(365): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(372): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(379): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(386): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(411): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(419): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(435): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(445): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(488): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(495): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(502): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(508): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(516): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(549): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(556): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(573): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(583): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(696): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(704): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(711): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(717): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(725): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(747): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(758): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(775): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(793): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(806): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(815): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(852): warning C4018: '<': signed/unsigned mismatch
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(857): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(863): warning C4018: '<': signed/unsigned mismatch
-d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(871): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(864): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(870): warning C4018: '<': signed/unsigned mismatch
+d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(878): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(79): warning C4101: 'avgWait': unreferenced local variable
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(77): warning C4101: 'avgTurnaround': unreferenced local variable
 d:\documents\github\cs475w_simulation_project\os_simulator\os_simulator\test.cpp(78): warning C4101: 'avgResponse': unreferenced local variable
