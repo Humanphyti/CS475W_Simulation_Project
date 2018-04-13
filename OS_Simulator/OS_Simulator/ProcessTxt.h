@@ -23,7 +23,7 @@ void WriteFile(vector<PCB> pcbs, int avgT, int avgR, int avgW, string name) {
 	else if (name == "ML")
 		processesIn.open("processesML.txt");
 	else
-		processesIn.open("processes.txt");
+		processesIn.open("processesMC.txt");
 
 	if (!processesIn.is_open()) {
 		cout << "File Could not be opened." << endl;
